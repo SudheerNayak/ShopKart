@@ -1,25 +1,31 @@
-<div style="text-align:center">
-  <h1>View Product</h1>
+<div [ngStyle]="{'background-color':'yellow'}"
+     style="text-align:center">
+  <h1 ngClass="red size30">View Product</h1>
   <div class="table-responsive" style="text-align:center">
-    <table class="table" style="border:5px solid aqua" *ngIf="products; else elseblock">
+    <table class="table" style="border:5px solid aqua" *ngIf="products">
       <tr style="background-color:aqua; font-size:24pt">
         <td style="text-align:center">Product Id</td>
         <td style="text-align:center">Product Name</td>
-        <td style="text-align:center">Quantity Available</td>
+        
         <td style="text-align:center">Product CategoryId</td>
-        <td style="text-align:center">Product Price</td>
-        <td style="text-align:center">Product Action</td>
+        <td style="text-align:center"> Price</td>
+        <td style="text-align:center"> Action</td>
       </tr>
-      <tr *ngFor="let product of products" style="background-color:white" >
-
+      <tr *ngFor="let product of products" style="background-color:white; font-size:10pt">
+        <td>{{product.productId }}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantityAvailable}}</td>
+        <td><button title="Add to cart">Add to Cart</button></td>
       </tr>
     </table>
+    
 
+  </div></div>
+  <div *ngIf="!products" style="">
+    <h4 class="jumbotron" style="text-align:center;">No products available</h4>
   </div>
-  <ng-template #elseblock>
-    <div>
-      <br/>
-      <h4 class="jumbotron">No product Available</h4>
-    </div>
-  </ng-template>
-</div>
+ 
+  
+  
