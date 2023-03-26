@@ -1,0 +1,25 @@
+<div style="text-align:center">
+  <h1>View Product</h1>
+  <div class="table-responsive" style="text-align:center">
+    <table class="table" style="border:5px solid aqua" *ngIf="products; else elseblock">
+      <tr style="background-color:aqua; font-size:24pt">
+        <td style="text-align:center">Product Id</td>
+        <td style="text-align:center">Product Name</td>
+        <td style="text-align:center">Quantity Available</td>
+        <td style="text-align:center">Product CategoryId</td>
+        <td style="text-align:center">Product Price</td>
+        <td style="text-align:center">Product Action</td>
+      </tr>
+      <tr *ngFor="let product of products" style="background-color:white" >
+
+      </tr>
+    </table>
+
+  </div>
+  <ng-template #elseblock>
+    <div>
+      <br/>
+      <h4 class="jumbotron">No product Available</h4>
+    </div>
+  </ng-template>
+</div>
