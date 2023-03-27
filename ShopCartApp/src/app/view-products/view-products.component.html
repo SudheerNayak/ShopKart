@@ -1,17 +1,33 @@
 <div [ngStyle]="{'background-color':'yellow'}"
      style="text-align:center">
   <h1 ngClass="red size30">View Product</h1>
+  <br />
+  <div class="row">
+    <div class="col-md-10" style="text-align:right">
+      <label>Filter Products:</label>
+    </div>
+    <div class="col-md-2">
+      <select class="form-control" #categorydrop (change)="searchProductByCategory(categorydrop.value)">
+        <option value="0">All Categories</option>
+        <option *ngFor="let category of categories" value={{category.categoryId}}>
+          {{category.categoryName}}
+        </option>
+      </select>
+    </div>
+    </div>
+  <br />
+
   <div class="table-responsive" style="text-align:center">
-    <table class="table" style="border:5px solid aqua" *ngIf="products">
+    <table class="table" style="border:5px solid aqua" *ngIf="filteredProducts && filteredProducts.length">
       <tr style="background-color:aqua; font-size:24pt">
         <td style="text-align:center">Product Id</td>
         <td style="text-align:center">Product Name</td>
         
-        <td style="text-align:center">Product CategoryId</td>
+        <td style="text-align:center">CategoryId</td>
         <td style="text-align:center"> Price</td>
         <td style="text-align:center"> Action</td>
       </tr>
-      <tr *ngFor="let product of products" style="background-color:white; font-size:10pt">
+      <tr *ngFor="let product of filteredProducts" style="background-color:white; font-size:10pt">
         <td>{{product.productId }}</td>
         <td>{{product.productName}}</td>
         <td>{{product.categoryId}}</td>
