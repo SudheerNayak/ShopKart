@@ -4,9 +4,11 @@
     "\\ShopCartApp",
     "\\ShopCartApp\\src",
     "\\ShopCartApp\\src\\app",
+    "\\ShopCartApp\\src\\app\\shopCart-images",
     "\\ShopCartApp\\src\\app\\shopCart-interfaces",
-    "\\ShopCartApp\\src\\app\\view-products"
+    "\\ShopCartApp\\src\\app\\view-products",
+    "\\ShopCartApp\\src\\assets"
   ],
-  "SelectedNode": "\\ShopCartApp\\src\\app\\view-products\\view-products.component.ts",
+  "SelectedNode": "\\ShopCartApp\\src\\assets\\add-item.jpg",
   "PreviewInSolutionExplorer": false
 }

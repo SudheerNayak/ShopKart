@@ -31,7 +31,7 @@ export class ViewProductsComponent implements OnInit {
       this.showMsgDiv = true;
     }
     this.filteredProducts = this.products;
-    this.imageSrc = "src/app/shopCart-images/add-item.jpg";
+    this.imageSrc = "C:\Users\sudheer.nayak\ShopCart\ShopCartApp\src\assets\add-item.jpg";
   }
   searchProductByCategory(categoryId: string) {
     this.filteredProducts = this.products;
