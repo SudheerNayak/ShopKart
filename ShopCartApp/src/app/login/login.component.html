@@ -13,14 +13,27 @@
           </div>
           <div class="col; input-group">
             
-            <input type="email" name="email" class="form-control" ngModel>
+            <input type="email" name="email" #emailRef="ngModel" class="form-control" ngModel required>
+          </div>
+          <div *ngIf="emailRef.error && (emailRef.dirty || emailRef.touched)" style="text-align:left; padding-top:5px; color:red;">
+            <div [hidden]="!emailRef.errors.required">
+              <p>&nbsp;Email id is mandatory</p>
+            </div>
+            <div [hidden]="!emailRef.errors.pattern">
+              <p>&nbsp;Please enter correctly</p>
+            </div>
           </div>
         </div>
         <div class="form-group">
           <div class="col" style="text-align:left">
           <label>Password</label>
-          <input type="password" name="password" class="form-control " ngModel>
+          <input type="password" name="password" #passwordRef="ngModel" class="form-control " ngModel required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
         </div>
+          <div style="text-align:left; padding-top:5px; color:red">
+            <div [hidden]="passwordRef.valid || passwordRef.pristine">
+              <p>&nbsp;password is mandatory</p>
+            </div>
+          </div>
       </div>
         <div class="form-group" style="text-align:left;">
           <button type="submit" class="btn">Login</button>
